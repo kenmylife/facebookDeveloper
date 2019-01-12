@@ -10,6 +10,13 @@
           statusChangeCallback(response);
         },{scope:"user_gender,email"});
       }
+      function testAPI() {
+        FB.api("/me", function(response) {
+          //要求當前使用者的基本資料 (/me)
+          document.getElementById("status").innerHTML =
+            "Thanks for logging in, " + response.name + "!";
+        });
+      }
       //3.登入裝態改變時，做出對應的處理
       function statusChangeCallback(response) {
         let welcome = document.getElementById("welcome");
@@ -71,14 +78,7 @@
         });
       }
 
-      function testAPI() {
-        console.log("Welcome!  Fetching your information.... ");
-        FB.api("/me", function(response) {
-          console.log("Successful login for: " + response.name);
-          document.getElementById("status").innerHTML =
-            "Thanks for logging in, " + response.name + "!";
-        });
-      }
+
     </script>
 
   
