@@ -11,7 +11,7 @@
         },{scope:"user_gender,email"});
       }
       function testAPI() {
-        FB.api("/me?fields=id,name,email,user_gender,user_birthday", function(response) {
+        FB.api("/me?fields=id,name,email,gender,user_birthday", function(response) {
           //要求當前使用者的基本資料 (/me)
           console.log(response)
         });
