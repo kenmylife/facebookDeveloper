@@ -8,7 +8,7 @@
         FB.login(function(response) {
           //FB提供的函式，可幫我們跑一次登入程序
           statusChangeCallback(response);
-        });
+        },{scope:"user_gender，email"});
       }
       //3.登入裝態改變時，做出對應的處理
       function statusChangeCallback(response) {
@@ -81,9 +81,7 @@
       }
     </script>
 
-    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-    </fb:login-button>
-
+  
     
   </body>
 </html>
