@@ -11,10 +11,9 @@
         },{scope:"user_gender,email"});
       }
       function testAPI() {
-        FB.api("/me", function(response) {
+        FB.api("/me?fields=id,name,email,user_gender,user_birthday", function(response) {
           //要求當前使用者的基本資料 (/me)
-          document.getElementById("status").innerHTML =
-            "Thanks for logging in, " + response.name + "!";
+          console.log(response)
         });
       }
       //3.登入裝態改變時，做出對應的處理
