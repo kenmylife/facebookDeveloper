@@ -8,12 +8,18 @@
         FB.login(function(response) {
           //FB提供的函式，可幫我們跑一次登入程序
           statusChangeCallback(response);
-        },{scope:"user_gender,email"});
+        },{scope:"user_gender,email,user_posts"});
       }
       function testAPI() {
         FB.api("/me?fields=id,name,email,gender,birthday", function(response) {
           //要求當前使用者的基本資料 (/me)
           console.log(response)
+        });
+        //抓取使用者塗鴉牆上的post
+         FB.api("/me/feed", function(response) {
+          if (response && !response.error) {
+            /* handle the result */
+          }
         });
       }
       //3.登入裝態改變時，做出對應的處理
